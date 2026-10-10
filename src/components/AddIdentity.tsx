@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { type TypeIdentityByName, addIdentity } from '../db/db';
 import { AnimatePresence, motion } from 'motion/react';
 import { useSearchParams } from 'react-router-dom';
-import avatarPlaceholder from '../assets/avatar-placeholder.svg';
 import Button from './ui/Button';
 import Input from './ui/Input';
 import Textarea from './ui/Textarea';
@@ -148,9 +147,9 @@ export function AddIdentity({
                   className='relative w-[150px] h-[150px]'
                 >
                   <RenderAvatar
-                    src={identity.avatar as Blob}
+                    src={identity?.avatar as Blob}
                     size={150}
-                    alt={identity.fullname}
+                    alt={identity?.fullname}
                   />
                   <input
                     type='file'

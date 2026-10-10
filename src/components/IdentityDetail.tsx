@@ -6,7 +6,6 @@ import {
   type TypeIdentityByName,
 } from '../db/db';
 import { useCallback, useEffect, useState } from 'react';
-import avatarPlaceholder from '../assets/avatar-placeholder.svg';
 import Button from './ui/Button';
 import RenderAvatar from './ui/RenderAvatar';
 

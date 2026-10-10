@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { type TypeIdentityByName, getAllIdentities } from '../db/db';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import avatarPlaceholder from '../assets/avatar-placeholder.svg';
 import RenderAvatar from './ui/RenderAvatar';
 
 export function IdentityList({ refreshTrigger }: { refreshTrigger: number }) {
@@ -35,9 +34,9 @@ export function IdentityList({ refreshTrigger }: { refreshTrigger: number }) {
             onClick={() => navigate(`/profile/${item.id}${location.search}`)}
           >
             <RenderAvatar
-              src={item.avatar as Blob}
+              src={item?.avatar as Blob}
               size={100}
-              alt={item.fullname}
+              alt={item?.fullname}
             />
             <div className='flex flex-col gap-1 items-start'>
               <h2 className='w-75 text-lg text-left font-bold truncate'>

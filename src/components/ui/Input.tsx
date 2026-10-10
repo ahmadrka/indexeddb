@@ -24,7 +24,7 @@ export default function Input({
   label?: string;
   required?: boolean;
   autoFocus?: boolean;
-  ref?: React.RefObject<HTMLInputElement>;
+  ref?: React.Ref<HTMLInputElement>;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }) {
   return (
