@@ -2,13 +2,13 @@ import { Dexie, type Table } from 'dexie';
 import { v7 as uuidv7 } from 'uuid';
 
 export interface TypeIdentityByName {
-  id: string;
+  id?: string;
   avatar: File | Blob | string | null;
   fullname: string;
   username: string;
   email: string;
   bio: string;
-  createdAt: Date;
+  createdAt?: Date;
 }
 
 export class IdentityManager extends Dexie {
