@@ -48,7 +48,7 @@ export function AddIdentity({
       e.preventDefault();
       try {
         const result = await addIdentity(identity as TypeIdentityByName);
-        alert(result.username + ' added successfully!');
+        alert(result?.username + ' added successfully!');
         setIdentity({
           avatar: new Blob(),
           fullname: '',
