@@ -25,6 +25,10 @@ export default function IdentityDetail({
   useEffect(() => {
     let isMounted = true;
     getIdentityById(id).then((data) => {
+      if (!data) {
+        navigate(`/${location.search}`);
+        return;
+      }
       if (isMounted) {
         setIdentity(data); // Cukup set data yang dikembalikan dari API
       }

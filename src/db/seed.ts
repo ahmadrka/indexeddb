@@ -152,17 +152,6 @@ export default async function generateSeedDb() {
     {
       id: uuidv7(),
       avatar: await fetchImageAsBlob(
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9n25a_GFmL4qxJmEkoaQpTxnuAhGj8XfpJrI4fui88nPJBJlFl5Git6ivZdgCxafZE9NvBWc57pxDo_b4JABc6Z8SZ1uAzXLdfz8PCAWdLg&s=10',
-      ),
-      username: 'bambangpamungkas',
-      fullname: 'Bambang Pamungkas',
-      email: 'bambangpamungkas@example.com',
-      bio: 'Legenda sepak bola Indonesia',
-      createdAt: new Date(),
-    },
-    {
-      id: uuidv7(),
-      avatar: await fetchImageAsBlob(
         'https://media.licdn.com/dms/image/v2/D5603AQGfCzysTbb44w/profile-displayphoto-scale_200_200/B56aBnUTLkJkAc-/0/1788439773576?e=2147483647&v=beta&t=FlDL0eECiR0uYrUxaJeBnX_sfsy_Hd3NZ9-Zdz2vJMM',
       ),
       username: 'ahmadrka',
@@ -187,6 +176,17 @@ export default async function generateSeedDb() {
       fullname: 'asdf',
       email: 'asdf@mail.com',
       bio: 'Ethical Hacker 🛡️ | Finding bugs before the bad guys do | Bug Bounty Hunter 🎯',
+      createdAt: new Date(),
+    },
+    {
+      id: uuidv7(),
+      avatar: await fetchImageAsBlob(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9n25a_GFmL4qxJmEkoaQpTxnuAhGj8XfpJrI4fui88nPJBJlFl5Git6ivZdgCxafZE9NvBWc57pxDo_b4JABc6Z8SZ1uAzXLdfz8PCAWdLg&s=10',
+      ),
+      username: 'bambangpamungkas',
+      fullname: 'Bambang Pamungkas',
+      email: 'bambangpamungkas@example.com',
+      bio: 'Legenda sepak bola Indonesia',
       createdAt: new Date(),
     },
     {
