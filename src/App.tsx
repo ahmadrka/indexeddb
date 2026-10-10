@@ -18,9 +18,15 @@ function App() {
       <NavBar />
       <AddIdentity onIdentityAdded={handleDataChanged} />
       <EditIdentity onIdentityEdited={handleDataChanged} />
-      <Info />
+      <Info
+        refreshTrigger={refreshKey}
+        onIdentityGenerated={handleDataChanged}
+      />
       <div className='overflow-clip w-full h-full m-0 p-0 flex flex-row justify-center'>
-        <IdentityList refreshTrigger={refreshKey} />
+        <IdentityList
+          refreshTrigger={refreshKey}
+          onIdentityGenerated={handleDataChanged}
+        />
         <IdentityDetail
           refreshTrigger={refreshKey}
           onIdentityDeleted={handleDataChanged}

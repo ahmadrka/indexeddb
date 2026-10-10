@@ -19,7 +19,7 @@ export default function Button({
         onClick={onClick}
         disabled={disabled}
         type={type}
-        className={`text-white font-medium bg-neutral-800 rounded-xl p-2 px-4 transition-all hover:bg-neutral-900 cursor-pointer whitespace-nowrap ${className}`}
+        className={`text-white font-medium bg-neutral-800 rounded-xl p-2 px-4 transition-all whitespace-nowrap ${className} ${disabled ? 'cursor-not-allowed opacity-50' : 'hover:bg-neutral-900 cursor-pointer'}`}
       >
         {children}
       </button>
@@ -31,7 +31,7 @@ export default function Button({
         onClick={onClick}
         disabled={disabled}
         type={type}
-        className={`text-white font-medium bg-red-500 rounded-xl p-2 transition-all hover:bg-red-700 cursor-pointer ${className}`}
+        className={`text-white font-medium bg-red-500 rounded-xl p-2 transition-all whitespace-nowrap ${className} ${disabled ? 'cursor-not-allowed opacity-50' : 'hover:bg-red-700 cursor-pointer'}`}
       >
         {children}
       </button>

@@ -69,21 +69,23 @@ export default function IdentityDetail({
           animate={{ translateX: '0%' }}
           exit={{ translateX: '100%' }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className='fixed w-full inset-0 z-10 lg:mt-4 mr-4 mb-4 lg:relative flex items-center justify-center bg-black/25 lg:bg-transparent backdrop-blur-sm'
+          className='lg:w-xl fixed w-full inset-0 z-10 lg:mt-4 mr-4 mb-4 lg:relative flex items-center lg:items-start justify-center bg-black/25 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none'
         >
-          <div className='w-xl lg:sticky lg:w-lg lg:top-24 p-6 flex flex-col items-start justify-start gap-10 rounded-3xl bg-white'>
-            <div className='pt-10 w-full flex flex-col items-center justify-center gap-0'>
+          <div className='lg:sticky lg:w-lg lg:top-24 p-6 flex flex-col items-start justify-start gap-10 rounded-3xl bg-white'>
+            <div className='pt-10 w-full flex flex-col items-center justify-center gap-4'>
               <RenderAvatar
                 src={identity?.avatar as Blob}
                 alt={identity?.fullname}
                 size={150}
               />
-              <h1 className='text-xl text-center font-bold'>
-                {identity?.fullname}
-              </h1>
-              <p className='text-md text-center text-gray-600'>
-                {identity?.username}
-              </p>
+              <div>
+                <h1 className='text-xl text-center font-bold'>
+                  {identity?.fullname}
+                </h1>
+                <p className='text-md text-center text-gray-600'>
+                  {identity?.username}
+                </p>
+              </div>
             </div>
             <div className='w-full flex flex-col gap-2'>
               <p className='text-md'>

@@ -61,6 +61,7 @@ export default function NavBar() {
           ref={inputRef}
           type='text'
           placeholder='Search...'
+          className='w-full'
         />
         <Button
           onClick={() =>
