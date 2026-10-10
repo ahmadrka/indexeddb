@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { type TypeIdentityByName, getAllIdentities } from '../db/db';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import avatarPlaceholder from '../assets/avatar-placeholder.svg';
+import RenderAvatar from './ui/RenderAvatar';
 
 export function IdentityList({ refreshTrigger }: { refreshTrigger: number }) {
   const navigate = useNavigate();
@@ -33,14 +34,10 @@ export function IdentityList({ refreshTrigger }: { refreshTrigger: number }) {
             className='w-full max-w-md flex flex-row gap-4 bg-white rounded-3xl p-3 cursor-pointer'
             onClick={() => navigate(`/profile/${item.id}${location.search}`)}
           >
-            <img
-              src={
-                item.avatar instanceof Blob && item.avatar.size > 0
-                  ? URL.createObjectURL(item.avatar)
-                  : avatarPlaceholder
-              }
-              alt={item.avatar ? item.fullname : 'no avatar'}
-              className='w-[100px] h-[100px] rounded-xl object-cover'
+            <RenderAvatar
+              src={item.avatar as Blob}
+              width={100}
+              alt={item.fullname}
             />
             <div className='flex flex-col gap-1 items-start'>
               <h2 className='w-75 text-lg text-left font-bold truncate'>

@@ -7,6 +7,8 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import avatarPlaceholder from '../assets/avatar-placeholder.svg';
+import Button from './ui/Button';
+import RenderAvatar from './ui/RenderAvatar';
 
 export function EditIdentity({
   onIdentityEdited,
@@ -149,17 +151,12 @@ export function EditIdentity({
               <div className='m-10'>
                 <div
                   title='Tap to Change Avatar'
-                  className='relative w-[150px] h-[150px] border border-gray-300 rounded-xl overflow-clip'
+                  className='relative w-[150px] h-[150px]'
                 >
-                  <img
-                    src={
-                      identity?.avatar instanceof Blob &&
-                      identity?.avatar.size > 0
-                        ? URL.createObjectURL(identity.avatar)
-                        : avatarPlaceholder
-                    }
-                    alt={identity?.avatar ? identity?.fullname : 'no avatar'}
-                    className='w-full h-full object-cover'
+                  <RenderAvatar
+                    src={identity.avatar as Blob}
+                    width={150}
+                    alt={identity.fullname}
                   />
                   <input
                     type='file'
@@ -276,19 +273,15 @@ export function EditIdentity({
                 />
               </div>
               <div className='w-full flex flex-row items-center justify-center gap-4'>
-                <button
+                <Button
                   type='button'
-                  className='w-full text-white font-medium bg-red-500 rounded-xl p-2 transition-all hover:bg-red-700 cursor-pointer'
+                  buttonType='error'
                   onClick={handleCancel}
+                  className='w-full'
                 >
                   Cancel
-                </button>
-                <button
-                  type='submit'
-                  className='w-full text-white font-medium bg-neutral-800 rounded-xl p-2 px-4 transition-all hover:bg-neutral-900 cursor-pointer'
-                >
-                  Edit Indentity
-                </button>
+                </Button>
+                <Button className='w-full'>Edit Indentity</Button>
               </div>
             </form>
           </motion.div>

@@ -3,6 +3,10 @@ import { type TypeIdentityByName, addIdentity } from '../db/db';
 import { AnimatePresence, motion } from 'motion/react';
 import { useSearchParams } from 'react-router-dom';
 import avatarPlaceholder from '../assets/avatar-placeholder.svg';
+import Button from './ui/Button';
+import Input from './ui/Input';
+import Textarea from './ui/Textarea';
+import RenderAvatar from './ui/RenderAvatar';
 
 export function AddIdentity({
   onIdentityAdded,
@@ -140,18 +144,13 @@ export function AddIdentity({
             >
               <div className='m-10'>
                 <div
-                  title='Tap to Change Avatar'
-                  className='relative w-[150px] h-[150px] border border-gray-300 rounded-xl overflow-clip'
+                  title='Tap to Add Avatar'
+                  className='relative w-[150px] h-[150px]'
                 >
-                  <img
-                    src={
-                      identity.avatar instanceof Blob &&
-                      identity.avatar.size > 0
-                        ? URL.createObjectURL(identity.avatar)
-                        : avatarPlaceholder
-                    }
-                    alt={identity.avatar ? identity.fullname : 'no avatar'}
-                    className='w-full h-full object-cover'
+                  <RenderAvatar
+                    src={identity.avatar as Blob}
+                    width={150}
+                    alt={identity.fullname}
                   />
                   <input
                     type='file'
@@ -176,77 +175,55 @@ export function AddIdentity({
                   Avatar
                 </label>
               </div>
-
-              <div className='w-full'>
-                <label
-                  htmlFor='fullname'
-                  className='block w-full text-sm font-medium'
-                >
-                  Full Name
-                </label>
-                <input
+              <Input
+                label='Full Name'
+                type='text'
+                id='fullname'
+                name='fullname'
+                placeholder='Your Full Name'
+                className='w-full'
+                value={identity.fullname}
+                onChange={(e) =>
+                  setIdentity((prev) => ({
+                    ...prev,
+                    fullname: e.target.value,
+                  }))
+                }
+                required
+              />
+              <div className='w-full flex flex-row items-center justify-center gap-4'>
+                <Input
+                  label='Username'
                   type='text'
-                  id='fullname'
-                  name='fullname'
-                  placeholder='Your Full Name'
-                  value={identity.fullname}
+                  id='username'
+                  name='username'
+                  placeholder='username'
+                  className='w-full'
+                  value={identity.username}
                   onChange={(e) =>
                     setIdentity((prev) => ({
                       ...prev,
-                      fullname: e.target.value,
+                      username: e.target.value,
                     }))
                   }
-                  className='block p-2 w-full bg-neutral-100 rounded-xl border border-neutral-300 transition-all cursor-text'
                   required
                 />
-              </div>
-              <div className='w-full flex flex-row items-center justify-center gap-4'>
-                <div className='w-full'>
-                  <label
-                    htmlFor='username'
-                    className='block w-full text-sm font-medium'
-                  >
-                    Username
-                  </label>
-                  <input
-                    type='text'
-                    id='username'
-                    name='username'
-                    placeholder='username'
-                    value={identity.username}
-                    onChange={(e) =>
-                      setIdentity((prev) => ({
-                        ...prev,
-                        username: e.target.value,
-                      }))
-                    }
-                    className='block p-2 w-full bg-neutral-100 rounded-xl border border-neutral-300 transition-all cursor-text'
-                    required
-                  />
-                </div>
-                <div className='w-full'>
-                  <label
-                    className='block w-full text-sm font-medium'
-                    htmlFor='email'
-                  >
-                    Email
-                  </label>
-                  <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    placeholder='email@example.com'
-                    value={identity.email}
-                    onChange={(e) =>
-                      setIdentity((prev) => ({
-                        ...prev,
-                        email: e.target.value,
-                      }))
-                    }
-                    className='block p-2 w-full bg-neutral-100 rounded-xl border border-neutral-300 transition-all cursor-text'
-                    required
-                  />
-                </div>
+                <Input
+                  label='Email'
+                  type='email'
+                  id='email'
+                  name='email'
+                  placeholder='email@example.com'
+                  className='w-full'
+                  value={identity.email}
+                  onChange={(e) =>
+                    setIdentity((prev) => ({
+                      ...prev,
+                      email: e.target.value,
+                    }))
+                  }
+                  required
+                />
               </div>
               <div className='w-full'>
                 <label
@@ -255,7 +232,7 @@ export function AddIdentity({
                 >
                   Bio
                 </label>
-                <textarea
+                <Textarea
                   id='bio'
                   name='bio'
                   placeholder='About yourself'
@@ -263,24 +240,18 @@ export function AddIdentity({
                   onChange={(e) =>
                     setIdentity((prev) => ({ ...prev, bio: e.target.value }))
                   }
-                  rows={4}
-                  className='block p-2 w-full min-h-32 max-h-64 bg-neutral-100 rounded-xl border border-neutral-300 transition-all cursor-text resize-none [field-sizing:content]'
                 />
               </div>
               <div className='w-full flex flex-row items-center justify-center gap-4'>
-                <button
-                  type='button'
-                  className='w-full text-white font-medium bg-red-500 rounded-xl p-2 transition-all hover:bg-red-700 cursor-pointer'
+                <Button
+                  buttonType='error'
                   onClick={handleCancel}
+                  type='button'
+                  className='w-full'
                 >
                   Cancel
-                </button>
-                <button
-                  type='submit'
-                  className='w-full text-white font-medium bg-neutral-800 rounded-xl p-2 px-4 transition-all hover:bg-neutral-900 cursor-pointer'
-                >
-                  Add New Indentity
-                </button>
+                </Button>
+                <Button className='w-full'>Add New Identity</Button>
               </div>
             </form>
           </motion.div>

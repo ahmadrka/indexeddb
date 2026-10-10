@@ -7,6 +7,7 @@ import {
 } from '../db/db';
 import { useCallback, useEffect, useState } from 'react';
 import avatarPlaceholder from '../assets/avatar-placeholder.svg';
+import Button from './ui/Button';
 
 export default function IdentityDetail({
   refreshTrigger,
@@ -122,20 +123,21 @@ export default function IdentityDetail({
               </p>
             </div>
             <div className='w-full flex flex-row items-center justify-center gap-4'>
-              <button
-                className='w-full text-white font-medium bg-neutral-800 rounded-xl p-2 px-4 transition-all hover:bg-neutral-900 cursor-pointer'
+              <Button
+                className='w-full'
                 onClick={() =>
                   navigate(`/profile/${identity?.id}/edit${location.search}`)
                 }
               >
                 Edit Identity
-              </button>
-              <button
-                className='w-full text-white font-medium bg-red-500 rounded-xl p-2 transition-all hover:bg-red-700 cursor-pointer'
+              </Button>
+              <Button
+                className='w-full'
+                buttonType='error'
                 onClick={handleDelete}
               >
                 Delete Identity
-              </button>
+              </Button>
             </div>
           </div>
         </motion.div>
