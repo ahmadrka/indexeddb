@@ -73,9 +73,25 @@ export async function getIdentityById(id: string) {
 }
 
 export async function addIdentity(data: TypeIdentityByName) {
+  const { username, email } = data;
+
+  const isUsernameExist = await db.identities.get({ username });
+  const isEmailExist = await db.identities.get({ email });
+
+  if (isUsernameExist) {
+    alert('Username already exists');
+    return null;
+  }
+
+  if (isEmailExist) {
+    alert('Email already exists');
+    return null;
+  }
+
   const newIdentity: TypeIdentityByName = {
     ...data,
     id: uuidv7(),
+    username: username.trim().toLowerCase(),
     createdAt: new Date(),
   };
   await db.identities.add(newIdentity);
@@ -93,4 +109,8 @@ export async function deleteIdentity(id: string) {
   await db.identities.delete(id);
 
   return id;
+}
+
+export async function deleteAllIdentities() {
+  await db.identities.clear();
 }
