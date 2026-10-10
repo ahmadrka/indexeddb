@@ -46,7 +46,7 @@ export default function Input({
         autoFocus={autoFocus}
         ref={ref}
         onKeyDown={onKeyDown}
-        className='block p-2 w-full bg-neutral-100 rounded-xl border border-neutral-300 transition-all cursor-text'
+        className='block p-2 w-full min-w-[100px] bg-neutral-100 rounded-xl border border-neutral-300 transition-all cursor-text'
       />
     </div>
   );

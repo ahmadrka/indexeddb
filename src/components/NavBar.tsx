@@ -51,9 +51,9 @@ export default function NavBar() {
   });
 
   return (
-    <div className='fixed z-10 top-0 right-0 left-0 p-4 w-full flex flex-row justify-between items-center bg-white/50 backdrop-blur-sm border-b border-gray-300'>
+    <div className='fixed z-10 top-0 right-0 left-0 p-4 w-full flex flex-col lg:flex-row justify-between items-center gap-4 bg-white/50 backdrop-blur-sm border-b border-gray-300'>
       <h1 className='text-2xl font-bold'>Identity Manager</h1>
-      <menu className='w-2/5 flex flex-row items-center gap-4'>
+      <menu className='w-full lg:w-2/5 flex flex-row items-center justify-center gap-4 overflow-auto'>
         <Input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

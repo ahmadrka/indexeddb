@@ -24,8 +24,8 @@ export function IdentityList({ refreshTrigger }: { refreshTrigger: number }) {
   }, [refreshTrigger, searchParams.get('search')]);
 
   return (
-    <div className='w-full flex flex-col items-center justify-start transition-all duration-300 ease-in-out'>
-      <h1 className='mt-4 font-bold text-xl'>All Identities</h1>
+    <div className='mt-16 lg:mt-4 w-full flex flex-col items-center justify-start transition-all duration-300 ease-in-out'>
+      <h1 className='font-bold text-xl'>All Identities</h1>
       <p>click item identity to show detail</p>
       <div className='w-full mx-auto p-4 flex justify-center flex-wrap gap-4'>
         {identityList.map((item) => (
@@ -36,7 +36,7 @@ export function IdentityList({ refreshTrigger }: { refreshTrigger: number }) {
           >
             <RenderAvatar
               src={item.avatar as Blob}
-              width={100}
+              size={100}
               alt={item.fullname}
             />
             <div className='flex flex-col gap-1 items-start'>

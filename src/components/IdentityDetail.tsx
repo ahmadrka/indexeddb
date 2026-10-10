@@ -8,6 +8,7 @@ import {
 import { useCallback, useEffect, useState } from 'react';
 import avatarPlaceholder from '../assets/avatar-placeholder.svg';
 import Button from './ui/Button';
+import RenderAvatar from './ui/RenderAvatar';
 
 export default function IdentityDetail({
   refreshTrigger,
@@ -69,18 +70,14 @@ export default function IdentityDetail({
           animate={{ translateX: '0%' }}
           exit={{ translateX: '100%' }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className='mt-4 mr-4 mb-4  relative'
+          className='fixed w-full inset-0 z-10 lg:mt-4 mr-4 mb-4 lg:relative flex items-center justify-center bg-black/25 lg:bg-transparent backdrop-blur-sm'
         >
-          <div className='sticky w-lg top-24 p-6 flex flex-col items-start justify-start gap-10 rounded-3xl bg-white'>
+          <div className='w-xl lg:sticky lg:w-lg lg:top-24 p-6 flex flex-col items-start justify-start gap-10 rounded-3xl bg-white'>
             <div className='pt-10 w-full flex flex-col items-center justify-center gap-0'>
-              <img
-                src={
-                  identity?.avatar instanceof Blob && identity.avatar.size > 0
-                    ? URL.createObjectURL(identity.avatar)
-                    : avatarPlaceholder
-                }
-                alt={identity?.avatar ? identity.fullname : 'no avatar'}
-                className='m-4 w-[150px] h-[150px] border border-gray-300 rounded-xl overflow-clip object-cover'
+              <RenderAvatar
+                src={identity?.avatar as Blob}
+                alt={identity?.fullname}
+                size={150}
               />
               <h1 className='text-xl text-center font-bold'>
                 {identity?.fullname}

@@ -3,10 +3,10 @@ import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
 export default function RenderAvatar({
   src,
   alt = 'no avatar',
-  width = 100,
+  size = 100,
 }: {
   src: Blob;
-  width?: number;
+  size?: number;
   alt?: string;
 }) {
   return (
@@ -17,7 +17,9 @@ export default function RenderAvatar({
           : avatarPlaceholder
       }
       alt={alt}
-      className={`w-[${width}px] h-[${width}px] border border-gray-300 rounded-xl overflow-clip object-cover`}
+      width={size}
+      height={size}
+      className='border border-gray-300 rounded-xl overflow-clip object-cover aspect-square'
     />
   );
 }

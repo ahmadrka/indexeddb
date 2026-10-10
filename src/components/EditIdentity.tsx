@@ -155,7 +155,7 @@ export function EditIdentity({
                 >
                   <RenderAvatar
                     src={identity.avatar as Blob}
-                    width={150}
+                    size={150}
                     alt={identity.fullname}
                   />
                   <input

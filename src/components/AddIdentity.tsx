@@ -149,7 +149,7 @@ export function AddIdentity({
                 >
                   <RenderAvatar
                     src={identity.avatar as Blob}
-                    width={150}
+                    size={150}
                     alt={identity.fullname}
                   />
                   <input
