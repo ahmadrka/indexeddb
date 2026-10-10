@@ -1,35 +1,45 @@
-# React + TypeScript + Vite
+<h1 align="center">Identity Manager</h1>
+<p align="center">Identity Manager is Simple IndexedDB API Implementation with Minimalist Dexie.js Wrapper. Built by <a href="https://ahmadrka.com/">Ahmadrka</a> with React (Vite), TypeScript, TailwindCSS, and IndexedDB (Dexie.js).</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+<details>
+	<summary><b>Screenshots</b> <i>(click to view)</i></summary>
+	<img src="public/screenshots/home.png" alt="Screenshot 1" />
+	<img src="public/screenshots/profile-details.png" alt="Screenshot 2" />
+	<img src="public/screenshots/add-edit.png" alt="Screenshot 3" />
+</details>
 
-Currently, two official plugins are available:
+## ⚒️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dexie.js** -> IndexedDB Wrapper
+- React (Vite) -> Frontend Library
+- uuid -> Random UUIDv7 Generator
+- tailwindcss -> CSS Framework
+- Motion -> Animation Library
 
-## React Compiler
+## 💡 Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+**Database Features:**
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+- Clean implementation of code and function.
+- Fully IndexedDB CRUD using Dexie.js wrapper.
+- Dummy data for DB seed.
 
-## Expanding the Oxlint configuration
+**Frontend Features:**
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- Simple and intuitive UI design.
+- Responsive both on desktop and mobile screen.
+- Clean per-component code implementation.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+**Not Yet Implemented (ToDo):**
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- Data filter and sort implementation.
+- DB sync with the cloud.
+- Data collision and data pollution risk when using cloud sync.
+- Adaptive UI dark theme.
+
+## 🚀 Getting Started
+
+This project using Node.js and NPM, make sure you have installed [Node.js](https://nodejs.org/) 22.12 or above.
+
+**1. Project Setup**
+#todo
