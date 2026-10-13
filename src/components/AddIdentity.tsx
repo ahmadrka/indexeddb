@@ -7,7 +7,7 @@ import Input from './ui/Input';
 import Textarea from './ui/Textarea';
 import RenderAvatar from './ui/RenderAvatar';
 
-export function AddIdentity({
+export default function AddIdentity({
   onIdentityAdded,
 }: {
   onIdentityAdded: () => void;

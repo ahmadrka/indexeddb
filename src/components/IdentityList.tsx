@@ -5,7 +5,7 @@ import RenderAvatar from './ui/RenderAvatar';
 import Button from './ui/Button';
 import generateSeedDb from '../db/seed';
 
-export function IdentityList({
+export default function IdentityList({
   refreshTrigger,
   onIdentityGenerated,
 }: {

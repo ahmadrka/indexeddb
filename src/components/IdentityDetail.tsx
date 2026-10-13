@@ -43,7 +43,7 @@ export default function IdentityDetail({
     if (!isVisible) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        navigate(`/${location.search}`);
+        navigate(`/${location.search}`, { replace: true });
       }
     };
 

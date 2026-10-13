@@ -6,7 +6,7 @@ import generateSeedDb from '../db/seed';
 import { useState } from 'react';
 import { deleteAllIdentities } from '../db/db';
 
-export function Info({
+export default function Info({
   refreshTrigger,
   onIdentityGenerated,
 }: {

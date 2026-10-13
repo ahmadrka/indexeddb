@@ -14,15 +14,18 @@ export default function NavBar() {
   const submitSearch = useCallback(() => {
     const trimmed = searchTerm.trim();
 
-    setSearchParams((prev) => {
-      const newParams = new URLSearchParams(prev);
-      if (trimmed) {
-        newParams.set('search', trimmed); // 👈 Memperbarui/menambah 'search' tanpa menghapus parameter lain seperti 'add'
-      } else {
-        newParams.delete('search');
-      }
-      return newParams;
-    });
+    setSearchParams(
+      (prev) => {
+        const newParams = new URLSearchParams(prev);
+        if (trimmed) {
+          newParams.set('search', trimmed); // 👈 Memperbarui/menambah 'search' tanpa menghapus parameter lain seperti 'add'
+        } else {
+          newParams.delete('search');
+        }
+        return newParams;
+      },
+      { replace: true },
+    );
   }, [searchTerm, setSearchParams]);
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Button from './ui/Button';
 import RenderAvatar from './ui/RenderAvatar';
 
-export function EditIdentity({
+export default function EditIdentity({
   onIdentityEdited,
 }: {
   onIdentityEdited: () => void;

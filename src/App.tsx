@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { AddIdentity } from './components/AddIdentity';
-import { IdentityList } from './components/IdentityList';
+import AddIdentity from './components/AddIdentity';
+import IdentityList from './components/IdentityList';
 import IdentityDetail from './components/IdentityDetail';
 import NavBar from './components/NavBar';
-import { EditIdentity } from './components/EditIdentity';
-import { Info } from './components/Info';
+import EditIdentity from './components/EditIdentity';
+import Info from './components/Info';
 
 function App() {
   const [refreshKey, setRefreshKey] = useState(0);
