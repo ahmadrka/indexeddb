@@ -1,6 +1,8 @@
 <h1 align="center">Identity Manager</h1>
 <p align="center">Identity Manager is Simple IndexedDB API Implementation with Minimalist Dexie.js Wrapper. Built by <a href="https://ahmadrka.com/">Ahmadrka</a> with React (Vite), TypeScript, TailwindCSS, and IndexedDB (Dexie.js).</p>
 
+<div align="center"><a href="https://indexeddb.ahmadrka.com/"><img src="https://img.shields.io/badge/VIEW%20LIVE%20DEMO-red?style=for-the-badge"></a></div>
+
 <details>
 	<summary><b>Screenshots</b> <i>(click to view)</i></summary>
 	<img src="public/screenshots/home.png" alt="Screenshot 1" />
